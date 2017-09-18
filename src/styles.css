@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+@media screen and (max-width: 940px) {
+
+ 
+.logo {
+    width: 88px;
+    background-size: 108px 42px;
+ }
+}
+
+.logo {
+    display: block;
+    width: 120px;
+   
+}

@@ -1,14 +1,36 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Lastnews</title>
-  <base href="/">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>Lastnews</title>
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+  </head>
+
+  <body>
+    <app-root></app-root>
+  </body>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').then(function (reg) {
+
+        if (reg.installing) {
+          console.log('Service worker installing');
+        } else if (reg.waiting) {
+          console.log('Service worker installed');
+        } else if (reg.active) {
+          console.log('Service worker active');
+        }
+
+      }).catch(function (error) {
+        // registration failed
+        console.log('Registration failed with ' + error);
+      });
+    }
+
+  </script>
+
 </html>
